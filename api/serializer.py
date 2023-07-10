@@ -2,6 +2,8 @@ from rest_framework import serializers
 from api.models import *
 from django.contrib.auth.models import User
 
+
+
 class Todoserializer(serializers.ModelSerializer):
     id=serializers.IntegerField(read_only=True)
     status=serializers.CharField(read_only=True)
@@ -10,6 +12,7 @@ class Todoserializer(serializers.ModelSerializer):
     class Meta:
         model= TodosModel
         fields= ["id","task_name","user","status","created_date"]
+ 
 
 
 class RegisterSerializer(serializers.ModelSerializer):
